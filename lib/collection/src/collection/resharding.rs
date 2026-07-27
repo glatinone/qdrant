@@ -237,7 +237,7 @@ impl Collection {
     pub async fn finish_resharding(&self, resharding_key: ReshardKey) -> CollectionResult<()> {
         let mut shard_holder = self.shards_holder.write().await;
 
-        // Check that resharding state mathes expected key.
+        // Check that resharding state matches expected key.
         //
         // Steps below modify state unconditionally, so running them on mismatched key
         // would modify unrelated resharding.
